@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dermatologist-level classification of skin cancer with deep neural networks</title>
+  <meta name="description" content="Deep learning matches the performance of dermatologists at skin cancer classification.">
+  <meta name="author" content="Andre Esteva">
+
+  <link rel="apple-touch-icon" sizes="57x57" href="/img/favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/img/favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/img/favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/img/favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/img/favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/img/favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/img/favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/img/favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/img/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <meta property="og:url" content="http://cs.stanford.edu/people/esteva/nature/" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Skin cancer classification with deep learning" />
+	<meta property="og:description" content="Deep learning matches the performance of dermatologists at skin cancer classification." />
+	<meta property="og:image" content="http://cs.stanford.edu/people/esteva/nature/img/nature.png" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Skin cancer classification with deep learning" />
+  <meta name="twitter:description" content="Deep learning matches the performance of dermatologists at skin cancer classification." />
+  <meta name="twitter:image" content="http://cs.stanford.edu/people/esteva/nature/img/nature.png" />
+
+  <script src="libs/jquery/dist/jquery.min.js"></script>
+
+  <!-- Nurmalize.css for better browsers compatibility
+    https://necolas.github.io/normalize.css/ -->
+  <link rel="stylesheet" href="libs/normalize-css/normalize.css">
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
+  <!-- Custom styles for this template -->
+  <link rel="stylesheet" href="css/main.min.css">
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+      <script src="uikit/js/html5shiv.js"></script>
+      <script src="uikit/js/respond.min.js"></script>
+      <![endif]-->
+
+</head>
+<body>
+
+  <!-- Page Wrapper -->
+  <div id="page-wrapper" class="page-wrapper">
+    <!-- Start #HEADER -->
+  	<header id="HEADER" class="block cover-1 overlay-black-70pc inverse-all bg-fixed">
+      <div class="container container-main align-center auto-invert pady-150 pady-100-xs">
+        <div class="wpc-33 hcenter align-center mgb-60 mgb-40-xs">
+    			<a href="https://www.stanford.edu/" target="_blank"><img src="img/logo_stanford.svg" class="max-w"/></a>
+    		</div>
+        <h1 class="case-u font-reg-l fs-400 fs-300-xs fg-text-d lts-sm">Skin cancer classification with deep learning</h1>
+        <p class="font-reg fs-150 lts-sm fg-text">Deep learning matches the performance of dermatologists at skin cancer classification</p>
+        <a id="about-button" class="icon-btn fg-accent fs-400"><i class="icon-abs bouncer ti-angle-down"></i></a>
+      </div>
+      <!-- /Container -->
+    </header>
+    <!-- /End #HEADER -->
+
+    <!-- Start #ABOUT -->
+    <div id="ABOUT" class="block bg-white">
+      <!-- Container -->
+      <div class="container pady-block-lg">
+        <!-- Row -->
+  			<div class="row row-table">
+          <!-- Col -->
+  				<div class="col-sm-6 align-center v-middle mgb-30-xs">
+  					<a href="http://www.nature.com/doifinder/10.1038/nature21056" target="_blank"><img src="img/nature.png" class="lyt-iblock max-w" alt="Nature cover" title="Nature Cover"></a>
+  				</div>
+          <!-- /Col -->
+  				<!-- Col -->
+          <div class="col-sm-6 v-middle align-center-xs">
+            <div class="mgb-30 auto-invert line-b align-center-xs">
+  						<h2 class="font-cond-b fg-text-d lts-md">Dermatologist-level classification of skin cancer</h2>
+  					</div>
+            <p class="fg-text fs-110">An artificial intelligence trained to classify images of skin lesions as benign lesions or malignant skin cancers achieves the accuracy of board-certified dermatologists.</p>
+            <p class="fg-text mgb-50" contenteditable="false">
+  					In this work, we've trained an artificial intelligence algorithm to classify images of skin lesions as benign lesions or malignant cancers. It achieves the accuracy of board-certified dermatologists.</p>
+
+            <a class="btn btn-sm btn-primary btn-inflate case-u lts-md auto-invert" href="http://www.nature.com/doifinder/10.1038/nature21056" target="_blank"><span data-field="html[Button Text]">Full Nature article</span><i class="icon-right ti-angle-right"></i></a>
+          </div>
+          <!-- /Col -->
+        </div>
+        <!-- /Row -->
+      </div>
+      <!-- /Container -->
+    </div>
+    <!-- /End #ABOUT -->
+
+    <!-- Start #MAIN -->
+    <div id="MAIN" class="block bg-white">
+      <!-- Container -->
+      <div class="container pady-block-lg auto-invert">
+
+        <div class="wpc-80 wpc-100-xs hcenter mgb-60">
+          <h2 class="fs-250-xs fg-text-d font-cond-b lts-sm line-b align-center mgb-30">Abstract</h2>
+
+          <p class="fg-text fs-110">
+  					 Skin cancer, the most common human malignancy, is primarily diagnosed visually, beginning with an initial clinical screening and followed potentially by dermoscopic analysis, a biopsy and histopathological examination. Automated classification of skin lesions using images is a challenging task owing to the fine-grained variability in the appearance of skin lesions.
+  				</p>
+          <p class="fg-text fs-110">
+  					 Deep convolutional neural networks (CNNs) 4,5 show potential for general and highly variable tasks across many fine-grained object categories 6–11. Here we demonstrate classification of skin lesions using a single CNN, trained end-to-end from images directly, using only pixels and disease labels as inputs. We train a CNN using a dataset of 129,450 clinical images—two orders of magnitude larger than previous datasets 12—consisting of 2,032 different diseases. We test its performance against 21 board-certified dermatologists on biopsy-proven clinical images with two critical binary classification use cases: malignant carcinomas versus benign seborrheic keratoses; and malignant melanomas versus benign nevi. The first case represents the identification of the most common cancers, the second represents the identification of the deadliest skin cancer.
+  				</p>
+          <p class="fg-text fs-110">
+  					 The CNN achieves performance on par with all tested experts across both tasks, demonstrating an artificial intelligence capable of classifying skin cancer with a level of competence comparable to dermatologists. Outfitted with deep neural networks, mobile devices can potentially extend the reach of dermatologists outside of the clinic. It is projected that 6.3 billion smartphone subscriptions will exist by the year 2021 (ref. 13) and can therefore potentially provide low-cost universal access to vital diagnostic care.
+  				</p>
+        </div>
+
+        <div class="row space-cols">
+          <!-- Col -->
+          <div class="col-sm-offset-1 col-sm-10">
+            <a href="#!" class="thumbnail" title="Our classification technique is a deep CNN. Data flow is from left to right">
+              <img src="img/fig1.png" class="img-block fill-w mgb-10 bd-all" alt="Figure 1" title="Our classification technique is a deep CNN. Data flow is from left to right">
+            </a>
+            <p class="fg-text fs-110">Our classification technique is a deep CNN. Data flow is from left to right: an image of a skin lesion (for example, melanoma) is sequentially warped into a probability distribution over clinical classes of skin disease using a deep neural network trained on a dataset of 129,450 skin lesions comprising 2,032 different diseases. Inception v3 CNN architecture reprinted from <a href="https://research.googleblog.com/2016/03/train-your-own-image-classifier-with.html" target="_blank">https://research.googleblog.com/2016/03/train-your-own-image-classifier-with.html</a></p>
+          </div>
+          <!-- /Col -->
+
+          <!-- Col -->
+          <!-- <div class="col-sm-offset-1 col-sm-10">
+            <a href="#!" class="thumbnail" title="A schematic illustration of the taxonomy and example test set images.">
+              <img src="img/fig2.png" class="img-block fill-w mgb-10 bd-all" alt="Figure 2" title="A schematic illustration of the taxonomy and example test set images.">
+            </a>
+            <p class="fg-text fs-110">A schematic illustration of the taxonomy and example test set images. a, A subset of the taxonomy of skin disease. The full taxonomy contains 2,032 diseases and is organized based on visual and clinical similarity of diseases. b, Malignant and benign example images from two disease classes. Example images reprinted with permission from the Edinburgh Dermofit Library <a href="https://licensing.eri.ed.ac.uk/i/software/dermofit-image-library.html" target="_blank">https://licensing.eri.ed.ac.uk/i/software/dermofit-image-library.html</a>.</p>
+          </div> -->
+          <!-- /Col -->
+
+          <!-- Col -->
+          <div class="col-sm-offset-1 col-sm-10">
+            <a href="#!" class="thumbnail" title="Skin cancer classification performance of the CNN and dermatologists.">
+              <img src="img/fig3.png" class="img-block fill-w mgb-10 bd-all" alt="Figure 3" title="Skin cancer classification performance of the CNN and dermatologists.">
+            </a>
+            <p class="fg-text fs-110">Skin cancer classification performance of the CNN and dermatologists. a, The deep learning CNN outperforms the average of the dermatologists at skin cancer classification (keratinocyte carcinomas and melanomas) using photographic and dermoscopic images. For each test, previously unseen, biopsy-proven images of lesions are displayed, and dermatologists are asked if they would: biopsy/treat the lesion or reassure the patient. A dermatologist outputs a single prediction per image and is thus represented by a single red point. The green points are the average of the dermatologists for each task, with error bars denoting one standard deviation (calculated from n = 25, 22 and 21 tested dermatologists for carcinoma, melanoma and melanoma under dermoscopy, respectively). The CNN is represented by the blue curve, and the AUC is the CNN’s measure of performance, with a maximum value of 1. The CNN achieves superior performance to a dermatologist if the sensitivity–specificity point of the dermatologist lies below the blue curve, which most do. b, The deep learning CNN exhibits reliable cancer classification when tested on a larger dataset. We tested the CNN on more images to demonstrate robust and reliable cancer classification. The CNN’s curves are smoother owing to the larger test set.</p>
+          </div>
+          <!-- /Col -->
+
+          <!-- Col -->
+          <!-- <div class="col-sm-offset-1 col-sm-10">
+            <a href="#!" class="thumbnail" title="A schematic illustration of the taxonomy and example test set images.">
+              <img src="img/fig4.png" class="img-block fill-w mgb-10 bd-all" alt="Figure 4" title="A schematic illustration of the taxonomy and example test set images.">
+            </a>
+            <p class="fg-text fs-110">A schematic illustration of the taxonomy and example test set images. a, A subset of the taxonomy of skin disease. The full taxonomy contains 2,032 diseases and is organized based on visual and clinical similarity of diseases. b, Malignant and benign example images from two disease classes. Example images reprinted with permission from the Edinburgh Dermofit Library <a href="https://licensing.eri.ed.ac.uk/i/software/dermofit-image-library.html", target="_blank" >https://licensing.eri.ed.ac.uk/i/software/dermofit-image-library.html</a>.</p>
+          </div> -->
+          <!-- /Col -->
+        </div>
+      </div>
+      <!-- /Container -->
+    </div>
+    <!-- /End #MAIN -->
+  	<!-- Start #AUTHORS -->
+    <div id="AUTHORS" class="block bg-white">
+      <!-- Container -->
+      <div class="container container-main auto-invert pady-60">
+        <!-- Title -->
+        <div class="section-title line-b align-center">
+  				<h2 class="font-cond-b fg-text-d lts-sm">Authors</h2>
+  			</div>
+  			<!-- /Title -->
+
+        <!-- Hash List -->
+        <ul class="hash-list cols-4 cols-1-xs pad-30-all clearfix align-center">
+          <li>
+  					<a href="https://cs.stanford.edu/people/esteva" target="_blank"><img class="wpx-100 img-iblock img-round mgb-30" alt="Andre Esteva" title="Andre Esteva" src="img/face_andre.jpg"></a>
+  					<h5 class="fs-110 text-d mgb-xs lts-sm font-cond mgb-10 fg-text-d"><a href="https://cs.stanford.edu/people/esteva" target="_blank">Andre Esteva</a></h5>
+  					<small class="ffs-90 lyt-block case-u font-cond-l text-l mgb-20">PhD Candidate<br>
+  					Electrical Engineering</small>
+  					<p class="fg-text mgb-30">Stanford University Artificial Intelligence Lab</p>
+  				</li>
+          <li>
+            <a href="https://stanford.edu/~kuprel/" target="_blank"><img class="wpx-100 img-iblock img-round mgb-30" alt="Brett Kuprel" title="Brett Kuprel" src="img/face_brett.jpg"></a>
+            <h5 class="fs-110 text-d mgb-xs lts-sm font-cond mgb-10 fg-text-d"><a href="https://stanford.edu/~kuprel/" target="_blank">Brett Kuprel</a></h5>
+            <small class="fs-90 lyt-block case-u font-cond-l text-l mgb-20">PhD Candidate<br>
+            Electrical Engineering</small>
+            <p class="fg-text mgb-30">Stanford University Artificial Intelligence Lab</p>
+          </li>
+          <li>
+            <a href="https://profiles.stanford.edu/roberto-novoa" target="_blank"><img class="wpx-100 img-iblock img-round mgb-30" alt="Rob Novoa" title="Rob Novoa" src="img/face_rob.jpg"></a>
+            <h5 class="fs-110 text-d mgb-xs lts-sm font-cond mgb-10 fg-text-d"><a href="https://profiles.stanford.edu/roberto-novoa" target="_blank">Rob Novoa</a></h5>
+            <small class="fs-90 lyt-block case-u font-cond-l text-l mgb-20">Clinical Assistant Professor</small>
+            <p class="fg-text mgb-30">Department of Dermatology, Department of Pathology, Stanford University</p>
+          </li>
+          <li>
+            <a href="https://med.stanford.edu/profiles/justin-ko" target="_blank"><img class="wpx-100 img-iblock img-round mgb-30" alt="Justin Ko" title="Justin Ko" src="img/face_justin.jpg"></a>
+            <h5 class="fs-110 text-d mgb-xs lts-sm font-cond mgb-10 fg-text-d"><a href="https://med.stanford.edu/profiles/justin-ko" target="_blank">Justin Ko</a></h5>
+            <small class="fs-90 lyt-block case-u font-cond-l text-l mgb-20">Clinical Associate Professor</small>
+            <p class="fg-text mgb-30">Department of Dermatology, Stanford University</p>
+        </li>
+      </ul>
+      <!-- /Hash List -->
+
+      <!-- Hash List -->
+			<ul class="hash-list cols-4 cols-1-xs pad-30-all clearfix align-center">
+        <li>
+          <a href="https://med.stanford.edu/profiles/susan-swetter" target="_blank"><img class="wpx-100 img-iblock img-round mgb-30" alt="Susan M. Swetter" title="Susan M. Swetter" src="img/face_susan.jpg"></a>
+          <h5 class="fs-110 text-d mgb-xs lts-sm font-cond mgb-10 fg-text-d"><a href="https://med.stanford.edu/profiles/susan-swetter" target="_blank">Susan M. Swetter</a></h5>
+          <small class="ffs-90 lyt-block case-u font-cond-l text-l mgb-20">Professor</small>
+          <p class="fg-text mgb-30">Department of Dermatology, Stanford University<br/>Dermatology Service, Veterans Affairs Palo Alto</p>
+        </li>
+        <li>
+					<a href="http://web.stanford.edu/group/blau/" target="_blank"><img class="wpx-100 img-iblock img-round mgb-30" alt="Brett Kuprel" title="Brett Kuprel" src="img/face_helen.jpg"></a>
+					<h5 class="fs-110 text-d mgb-xs lts-sm font-cond mgb-10 fg-text-d"><a href="http://web.stanford.edu/group/blau/" target="_blank">Helen M. Blau</a></h5>
+					<small class="fs-90 lyt-block case-u font-cond-l text-l mgb-20">Professor &amp; Director</small>
+					<p class="fg-text mgb-30">Baxter Laboratory for Stem Cell Biology, Department of Microbiology and Immunology, Institute for Stem Cell Biology and Regenerative Medicine, Stanford University</p>
+				</li>
+        <li>
+					<a href="http://robots.stanford.edu/" target="_blank"><img class="wpx-100 img-iblock img-round mgb-30" alt="Sebastian Thrun" title="Sebastian Thrun" src="img/face_sebastian.jpg"></a>
+					<h5 class="fs-110 text-d mgb-xs lts-sm font-cond mgb-10 fg-text-d"><a href="http://robots.stanford.edu/" target="_blank">Sebastian Thrun</a></h5>
+					<small class="fs-90 lyt-block case-u font-cond-l text-l mgb-20">Adjunct Professor</small>
+					<p class="fg-text mgb-30">Department of Computer Science, Stanford University</p>
+				</li>
+      </ul>
+      <!-- /Hash List -->
+
+      </div>
+      <!-- /Container -->
+    </div>
+    <!-- /End #AUTHORS -->
+
+  	<!-- Start #FOOTER -->
+    <div id="FOOTER" class="block bg-primary-d inverse-all">
+      <!-- Container -->
+      <div class="container auto-invert pady-block-sm align-center">
+        <h4 class="fg-text-d mgb-30">Keep up to date</h4>
+        <!-- Subscribe -->
+        <div class="subscribe-form auto-invert mgb-30 hcenter wpc-70 wpc-100-xs">
+          <!-- Begin MailChimp Signup Form -->
+          <div id="mc_embed_signup">
+          <form action="//stanford.us15.list-manage.com/subscribe/post?u=0adf1b251b6a2521445604970&amp;id=a32b8663fb" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" novalidate>
+          <div id="mc_embed_signup_scroll" class="row gutter-0">
+
+          <div class="col-sm-3 mc-field-group">
+            <input type="text" class="form-control" placeholder="Your Name" title="Enter Your Name..." name="NAME" id="mce-NAME">
+          </div>
+
+          <div class="col-sm-5 mc-field-group">
+            <input type="email" class="form-control required email" placeholder="Your Email Address" title="Enter Your Email Address..." name="EMAIL" id="mce-EMAIL">
+          </div>
+
+            <div id="mce-responses" class="">
+              <div class="response" id="mce-error-response" style="display:none"></div>
+              <div class="response" id="mce-success-response" style="display:none"></div>
+            </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+              <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_0adf1b251b6a2521445604970_a32b8663fb" tabindex="-1" value=""></div>
+
+              <div class="col-sm-4">
+                <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button btn btn-accent btn-borderless"></div>
+              </div>
+          </form>
+          </div>
+
+  			</div>
+  			<!-- /Subscribe -->
+
+      </div>
+      <div class="container auto-invert pady-block-sm align-center">
+        <h4 class="fg-text-d mgb-30">Share it</h4>
+        <ul class="hlinks hlinks-icons color-icons-bg-hovered s-200">
+  				<li>
+            <a href="https://twitter.com/intent/tweet?url=https://cs.stanford.edu/people/esteva/nature/&text=Skin+cancer+classification+with+deep+learning&oq=Skin+cancer+classification+with+deep+learning" target="_blank" class="btn-outline-default auto-invert"><i class="fa fa-3x fa-twitter"></i></a>
+          </li>
+  				<li>
+            <a href="http://www.facebook.com/sharer/sharer.php?u=http://cs.stanford.edu/people/esteva/nature" target="_blank" class="btn-outline-default auto-invert"><i class="fa fa-3x fa-facebook"></i></a>
+          </li>
+          <li>
+            <a href="https://plus.google.com/share?url=https://cs.stanford.edu/people/esteva/nature/&text=Skin+cancer+classification+with+deep+learning&oq=Skin+cancer+classification+with+deep+learning" target="_blank" class="btn-outline-default auto-invert"><i class="fa fa-3x fa-google-plus"></i></a>
+          </li>
+          <li>
+            <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://cs.stanford.edu/people/esteva/nature/&title=Skin+cancer+classification+with+deep+learning&oq=Skin+cancer+classification+with+deep+learning&summary=Deep+learning+matches+the+performance+of+dermatologists+at+skin+cancer+classification" target="_blank" class="btn-outline-default auto-invert"><i class="fa fa-3x fa-linkedin"></i></a>
+          </li>
+  			</ul>
+      </div>
+      <!-- /Container -->
+    </div>
+    <!-- /End #FOOTER -->
+  </div>
+  <!-- /Page Wrapper -->
+
+  <div tabindex="-1" class="modal fade" id="galleryModal" role="dialog">
+    <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+      <button class="close" type="button" data-dismiss="modal">×</button>
+    </div>
+    <div class="modal-body">
+    </div>
+      <div class="modal-footer">
+      <p class="modal-title fs-110">Caption</p>
+    </div>
+     </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="libs/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="libs/smoothscroll/dist/smoothscroll.js"></script>
+  <script src="js/app.min.js"></script>
+
+</body>
+</html>
