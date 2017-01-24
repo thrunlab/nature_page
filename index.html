@@ -54,6 +54,17 @@
 </head>
 <body>
 
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-90848102-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
   <!-- Page Wrapper -->
   <div id="page-wrapper" class="page-wrapper">
     <!-- Start #HEADER -->
@@ -88,7 +99,7 @@
   					</div>
             <p class="fg-text fs-110">An artificial intelligence trained to classify images of skin lesions as benign lesions or malignant skin cancers achieves the accuracy of board-certified dermatologists.</p>
             <p class="fg-text mgb-50" contenteditable="false">
-  					In this work, we've trained an artificial intelligence algorithm to classify images of skin lesions as benign lesions or malignant cancers. It achieves the accuracy of board-certified dermatologists.</p>
+            In this work, we pretrain a deep neural network at general object recognition, then fine-tune it on a dataset of ~130,000 skin lesion images comprised of over 2000 diseases.</p>
 
             <a class="btn btn-sm btn-primary btn-inflate case-u lts-md auto-invert" href="http://www.nature.com/doifinder/10.1038/nature21056" target="_blank"><span data-field="html[Button Text]">Full Nature article</span><i class="icon-right ti-angle-right"></i></a>
           </div>
@@ -112,10 +123,15 @@
   					 Skin cancer, the most common human malignancy, is primarily diagnosed visually, beginning with an initial clinical screening and followed potentially by dermoscopic analysis, a biopsy and histopathological examination. Automated classification of skin lesions using images is a challenging task owing to the fine-grained variability in the appearance of skin lesions.
   				</p>
           <p class="fg-text fs-110">
-  					 Deep convolutional neural networks (CNNs) 4,5 show potential for general and highly variable tasks across many fine-grained object categories 6–11. Here we demonstrate classification of skin lesions using a single CNN, trained end-to-end from images directly, using only pixels and disease labels as inputs. We train a CNN using a dataset of 129,450 clinical images—two orders of magnitude larger than previous datasets 12—consisting of 2,032 different diseases. We test its performance against 21 board-certified dermatologists on biopsy-proven clinical images with two critical binary classification use cases: malignant carcinomas versus benign seborrheic keratoses; and malignant melanomas versus benign nevi. The first case represents the identification of the most common cancers, the second represents the identification of the deadliest skin cancer.
+  					 Deep convolutional neural networks (CNNs) show potential for general and highly variable tasks across many fine-grained object categories. 
+             Here we demonstrate classification of skin lesions using a single CNN, trained end-to-end from images directly, using only pixels and disease labels as inputs. 
+             We train a CNN using a dataset of 129,450 clinical images—two orders of magnitude larger than previous datasets — consisting of 2,032 different diseases. 
+             We test its performance against 21 board-certified dermatologists on biopsy-proven clinical images with two critical binary classification use cases: malignant carcinomas versus benign seborrheic keratoses; and malignant melanomas versus benign nevi. 
+             The first case represents the identification of the most common cancers, the second represents the identification of the deadliest skin cancer.
   				</p>
           <p class="fg-text fs-110">
-  					 The CNN achieves performance on par with all tested experts across both tasks, demonstrating an artificial intelligence capable of classifying skin cancer with a level of competence comparable to dermatologists. Outfitted with deep neural networks, mobile devices can potentially extend the reach of dermatologists outside of the clinic. It is projected that 6.3 billion smartphone subscriptions will exist by the year 2021 (ref. 13) and can therefore potentially provide low-cost universal access to vital diagnostic care.
+  					 The CNN achieves performance on par with all tested experts across both tasks, demonstrating an artificial intelligence capable of classifying skin cancer with a level of competence comparable to dermatologists. 
+             Outfitted with deep neural networks, mobile devices can potentially extend the reach of dermatologists outside of the clinic. It is projected that 6.3 billion smartphone subscriptions will exist by the year 2021 and can therefore potentially provide low-cost universal access to vital diagnostic care.
   				</p>
         </div>
 
@@ -125,7 +141,7 @@
             <a href="#!" class="thumbnail" title="Our classification technique is a deep CNN. Data flow is from left to right">
               <img src="img/fig1.png" class="img-block fill-w mgb-10 bd-all" alt="Figure 1" title="Our classification technique is a deep CNN. Data flow is from left to right">
             </a>
-            <p class="fg-text fs-110">Our classification technique is a deep CNN. Data flow is from left to right: an image of a skin lesion (for example, melanoma) is sequentially warped into a probability distribution over clinical classes of skin disease using a deep neural network trained on a dataset of 129,450 skin lesions comprising 2,032 different diseases. Inception v3 CNN architecture reprinted from <a href="https://research.googleblog.com/2016/03/train-your-own-image-classifier-with.html" target="_blank">https://research.googleblog.com/2016/03/train-your-own-image-classifier-with.html</a></p>
+            <p class="fg-text fs-110">Our classification technique is a deep CNN. Data flow is from left to right: an image of a skin lesion (for example, melanoma) is sequentially warped into a probability distribution over clinical classes of skin disease using a deep neural network trained on our dataset. Inception v3 CNN architecture reprinted from <a href="https://research.googleblog.com/2016/03/train-your-own-image-classifier-with.html" target="_blank">https://research.googleblog.com/2016/03/train-your-own-image-classifier-with.html</a></p>
           </div>
           <!-- /Col -->
 
